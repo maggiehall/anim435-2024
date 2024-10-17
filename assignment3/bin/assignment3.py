@@ -3,6 +3,9 @@ import maya.standalone
 maya.standalone.initialize()
 import maya.cmds
 
+#testing sumbission
+#Created entire new directory
+
 parser = argparse.ArgumentParser()
 parser.add_argument('-r', '--radius', help =)
 maya.cmds.polySphere()
