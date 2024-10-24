@@ -1,0 +1,20 @@
+#code in aliases.sh 
+shot(){
+	export SHOT="$1"
+	export TASK="$2"
+
+	export PROJECT_DIR='/c/Users/maggi/OneDrive - Drexel University/Year3/fallWinter/techDirecting/anim435-2024/assignment4/shots'/"$SHOT"/"$TASK"
+	echo Setting project to "$PROJECT_DIR"
+	cd "$PROJECT_DIR"
+	export MAYA_PROJECT="$PROJECT_DIR"
+
+}
+
+#automaticshelf code
+#created by Professor Muto
+import os
+shot = os.getenv('SHOT')
+top_transform = maya.cmds.createNode('transfrom', n=shot.upper())
+set_transform = maya.cmds.createNode('transform', n='SET')
+anim_transform = maya.cmds.createNode('transform', n='ANIM')
+maya.cmds.parent(set_transform, anim_transform, top_transform)
