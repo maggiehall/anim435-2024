@@ -33,10 +33,3 @@ for folder in folders:
         print(f'Created folder: {folderPath}')
     else:
         print(f'Folder already exists: {folderPath}')
-
-# import os
-# shot = os.getenv('SHOT')
-# top_transform = maya.cmds.createNode('transfrom', n=shot.upper())
-# set_transform = maya.cmds.createNode('transform', n='SET')
-# anim_transform = maya.cmds.createNode('transform', n='ANIM')
-# maya.cmds.parent(set_transform, anim_transform, top_transform)
