@@ -14,7 +14,7 @@ def createCube(color):
     myCube = cmds.polyCube(width=5, height=5, depth=5)[0]
     material = createMaterial(color)
     cmds.select(myCube)
-    cmds.hyperShade(assign=material)
+    cmds.hyperShade(material, assign=True)
     return myCube
 
 #fcn to create cphere with material
@@ -33,7 +33,7 @@ parser.add_argument('--color', choices=['red', 'green', 'blue', 'white'], defaul
 parser.add_argument('--output', required=True, help="Path to save the Maya file (.mb)")
 
 args = parser.parse_args()
-
+print(args.color)
 # defining the colors
 if args.color == 'red':
     color = (1.0, 0.0, 0.0)
@@ -43,6 +43,7 @@ elif args.color == 'blue':
     color = (0.0, 0.0, 1.0)
 else:
     color = (1.0, 1.0, 1.0)  # Default to white
+print(color)
 
 # Creating the shape
 if args.shape == 'cube':
@@ -54,7 +55,8 @@ elif args.shape == 'sphere':
 
 
 # Save the Maya file
-maya.cmds.file(rename=r"C:\Users\maggi\OneDrive - Drexel University\Year3\fallWinter\techDirecting\week3\anim435-2024\standalone_example\newsphere.mb")
+
+maya.cmds.file(rename=args.output)
 maya.cmds.file(save=True)
 print(f"Saved file to {args.output}")
 
