@@ -12,14 +12,31 @@
 
 #code for maya
 import os
-os.getenv("ASSET")
-os.getenv("TASK")
-os.getenv("USERNAME")
+import maya.cmds as cmds
+import maya.mel as mel
+
+#access and define enviornment variables from git bash
+assetName = os.getenv("ASSET")
+task = os.getenv("TASK")
+username = os.getenv("USERNAME")
+
+#define file path for fbx asset folder
+pathExportDirectory = "/c/Users/maggi/OneDrive - Drexel University/Year3/fallWinter/techDirecting/anim435-2024-mh3775/midterm/maya/assets"
+
+#add environment variables to create the structurred fbx path
+filepath = os.path.join(pathExportDirectory, task, username, assetName)
 
 
+cmds.select(assetName)
 
+cmds.file(newFilePath, force=True, options="v=0;", typ="FBX export", pr=True,  ea=True)
 
+#alternate option
+#cmds.select(assetName)
 
+#mainpath = filepath + ".fbx"
+
+#mel.eval( 'FBXExport -f "{0}" -s'.format(mainpath) )
 
 
 
