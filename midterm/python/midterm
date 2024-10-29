@@ -6,10 +6,15 @@
 # environment variables. use the below code in 
 # GitBash to define these variables
 
-    #export assetName="insert_your_asset_name"
-    #export taskName="insert_your_task_name"
-    #export userName="insert_your_user_name"
+    #export ASSET=insert_your_asset_name
+    #export TASK=insert_your_task_name
+    #export USERNAME=insert_your_user_name
 
+#code for maya
+import os
+os.getenv("ASSET")
+os.getenv("TASK")
+os.getenv("USERNAME")
 
 
 
