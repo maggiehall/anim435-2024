@@ -1,7 +1,7 @@
 #README
 # Export FBX files
-## overview
-this tool reads an assets name, task name  and a username from environment variables. This information will be formatted into a filepath and exports the asset as an fbx.
+## Overview
+This tool reads an assets name, task name  and a username from environment variables. This information will be formatted into a filepath and exports the asset as an fbx.
 
 ## Prerequisites
 To use this python code, the environment variable must be defined in GitBash.  
@@ -16,7 +16,7 @@ To use this python code, the environment variable must be defined in GitBash.
     TASK: A descriptive name for the task (e.g., "modeling" or "texturing").  
     USERNAME: Your username or identifier (can use default) 
 
-These variables will be used to construct the file path and name
+These variables will be used to construct the file path and name.
 
 ## Usage
 ```python
