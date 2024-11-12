@@ -1,0 +1,37 @@
+#assignment 5
+#add logging to a previous assignment
+
+#midterm
+#maggie Hall
+#Export FBX files using environment variables
+
+#for this code to work, you MUST use the provided
+# environment variables. use the below code in 
+# GitBash to define these variables
+
+    #export ASSET=insert_your_asset_name
+    #export TASK=insert_your_task_name
+    #export USERNAME=insert_your_user_name
+
+#code for maya
+import os
+import maya.cmds as cmds
+import maya.mel as mel
+
+#access and define enviornment variables from git bash
+assetName = os.getenv("ASSET")
+task = os.getenv("TASK")
+username = os.getenv("USERNAME")
+
+#define file path for fbx asset folder
+#"r" is for a raw string
+pathExportDirectory = r"C:\Users\maggi\OneDrive - Drexel University\Year3\fallWinter\techDirecting\anim435-2024-mh3775\midterm\maya\assets"
+
+#add environment variables to create the structurred fbx path
+fileName = f"{task}_{username}_{assetName}.fbx"
+filepath = os.path.join(pathExportDirectory, fileName)
+
+
+cmds.select(assetName)
+
+cmds.file(filepath, force=True, options="v=0;", typ="FBX export", pr=True,  es=True)
