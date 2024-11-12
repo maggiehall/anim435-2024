@@ -1,5 +1,9 @@
 #README
 # Export FBX files
+
+#note for professor
+I honestly don't know if I did this assignment correctly. I follwed generally what you have in the lecture. When I ran the file in gitbash it would print to the log file but not in git bash, not sure what I was doing wrong there. I also don't know exactly what I'm looking for when I'm reading the errors that are printed as it is seeminglyy printing infinitely.
+
 ## Overview
 This tool reads an assets name, task name  and a username from environment variables. This information will be formatted into a filepath and export the asset as an fbx.
 
