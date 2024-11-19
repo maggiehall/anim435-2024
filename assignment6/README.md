@@ -1,6 +1,9 @@
 #README
 # Export FBX files
 
+## note for profesoor
+Hi! I am stuggling to run this in gitbash. I followed the structure you used in class but I can't seem to get it to work in gitbash. The same thing happened last week. I'm sure I'm doing something wrong in gitbash as I have struggled with it all quarter. Hope its not too messed up though, sorry.
+
 ## Overview
 This tool reads an assets name, task name  and a username from environment variables. This information will be formatted into a filepath and export the asset as an fbx.
 
@@ -36,14 +39,3 @@ The script uses  dictionary titled "data" to contain information of the asset na
 - '--Export Command': Selects the asset by name and exports it as an FBX file with the constructed path.
 
 ```
-
-
-#README
-tags store arbritary data, there is also info in a structure that gets put into a file on disk
-
-json notes:
-- 'dump' writes to a file
-- 'load' reads in from a file
-- all im doing is taking a dictionary from pythin and writing it to a file
-
-min 28 for dictioary creation in gitbash
