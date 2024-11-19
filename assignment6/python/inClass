@@ -1,0 +1,21 @@
+#in class dict
+
+data = {'asset'
+: 'carA',
+'publish_date': '11/15/2025 04:04:10'
+}
+
+>>> data
+{'asses': 'carA', 'publish_daate': '11/15/2025 04:04:10'}
+>>> data.get('asset')
+'carA'
+>>> data.kes()
+dict_keys(['assest', 'publish_date'])
+>>>>
+>>>
+>>>
+>>> with open('metadata.json', 'w') as f:   #whhile this file is open for writing, we can refer to it as F, when the code is finsihed is will close itself
+...     json.dump(data,f)
+>>>
+>>>
+>>> exit()

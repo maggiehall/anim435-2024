@@ -15,6 +15,7 @@
 #code for maya
 import os
 import maya.cmds as cmds
+import json
 import logging
 logger = logging.getLogger(__name__)
 
@@ -46,6 +47,15 @@ pathExportDirectory = r"C:\Users\maggi\OneDrive - Drexel University\Year3\fallWi
 fileName = f"{task}_{username}_{assetName}.fbx"
 filepath = os.path.join(pathExportDirectory, fileName)
 
+#metadata dictionary
+data = {
+    "assetName": assetName,
+    "task": task,
+    "username": username,
+    "exportpath": filepath,
+    "exportStatus": "failed", #failed for default, will update if successful
+}
+
 #use logging to see if asset is properly selected and exported
 try:
     # Attempt to select the asset
@@ -59,7 +69,18 @@ try:
     cmds.file(filepath, force=True, options="v=0;", typ="FBX export", pr=True, es=True)
     logger.info(f"Successfully exported asset to '{filepath}'")
 
+    #update metadata on sucess
+    data["exportStatus"] = "success"
+
 except Exception as e:
     logger.error(f"Failed to export FBX: {e}")
 
+#write metadata to JSON file
+metadata_file = os.path.join(pathExportDirectory, "metadata.json")
+try:
+    with open(metadata_file, 'w') as f:
+        json.dump(data, f, indent=4)
+    logger.info(f"Metadata successfully written to '{metadata_file}'")
+except Exception as e:
+    logger.error(f"Failed to write metadata: {e}")
 logger.info("Finished FBX export script.")
